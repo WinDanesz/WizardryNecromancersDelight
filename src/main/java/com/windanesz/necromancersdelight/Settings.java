@@ -34,12 +34,16 @@ public class Settings {
 		@Config.Name("Malice Ward Absorption Amount")
 		@Config.Comment("Sets the Absorption level the Malice Ward amulet gives.")
 		@Config.RequiresMcRestart
-		public int amulet_malice_ward_absorption_level = 1;
+		public int amulet_malice_ward_absorption_level = 2;
 
 		@Config.Name("Malice Ward Cooldown")
 		@Config.Comment("Sets the cooldown of the Malice Ward amulet (in ticks, 20 = 1 second).")
 		@Config.RequiresMcRestart
 		public int amulet_malice_ward_cooldown = 1200;
+
+		@Config.Name("Crown of Pests Cooldown")
+		@Config.Comment("Sets the entity respawn cooldown of the Crown of Pests headgear (in ticks, 20 = 1 second).")
+		public int head_pest_crown_cooldown = 800;
 	}
 
 	@Config.Name("Spell Tweaks Settings")

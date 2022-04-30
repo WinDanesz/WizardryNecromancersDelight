@@ -10,10 +10,10 @@
         "trades": true,
         "looting": true
     },
-    "tier": "advanced",
+    "tier": "novice",
     "element": "necromancy",
     "type": "utility",
-    "cost": 40,
+    "cost": 20,
     "chargeup": 20,
     "cooldown": 60,
     "base_properties": {

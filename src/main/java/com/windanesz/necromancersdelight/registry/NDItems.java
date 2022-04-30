@@ -2,6 +2,9 @@ package com.windanesz.necromancersdelight.registry;
 
 import com.windanesz.necromancersdelight.NecromancersDelight;
 import com.windanesz.necromancersdelight.item.ItemMaliceWard;
+import com.windanesz.necromancersdelight.item.ItemPestCrown;
+import com.windanesz.necromancersdelight.item.ItemStinkBomb;
+import com.windanesz.wizardryutils.item.ItemNewArtefact;
 import com.windanesz.wizardryutils.registry.ItemRegistry;
 import electroblob.wizardry.item.ItemArtefact;
 import net.minecraft.item.EnumRarity;
@@ -27,17 +30,20 @@ public final class NDItems {
 	public static final Item amulet_malice_ward = placeholder();
 	public static final Item amulet_necromatic_ward = placeholder();
 
-	public static final Item ring_frozen_dagger = placeholder();
 	public static final Item ring_legion = placeholder();
 	public static final Item ring_nameless = placeholder();
+	public static final Item ring_frozen_dagger = placeholder();
+	public static final Item ring_forsaken = placeholder();
 
-	public static final Item charm_scarab = placeholder();
 	public static final Item charm_bone_bag = placeholder();
+	public static final Item charm_mummy_minion = placeholder();
+	public static final Item charm_scarab = placeholder();
 	public static final Item charm_mushroom_minion = placeholder();
+	public static final Item head_pest_crown = placeholder();
 
 	//	public static final Item head_ = placeholder();
 
-	//	public static final Item belt_ = placeholder();
+	public static final Item stink_bomb = placeholder();
 
 
 	private NDItems() {} // No instances!
@@ -51,15 +57,20 @@ public final class NDItems {
 		ItemRegistry.registerItemArtefact(registry, "amulet_malice_ward", NecromancersDelight.MODID, new ItemMaliceWard(EnumRarity.RARE, ItemArtefact.Type.AMULET));
 		ItemRegistry.registerItemArtefact(registry, "amulet_necromatic_ward", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.UNCOMMON, ItemArtefact.Type.AMULET));
 
-		ItemRegistry.registerItemArtefact(registry, "ring_frozen_dagger", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.RING));
 		ItemRegistry.registerItemArtefact(registry, "ring_legion", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.UNCOMMON, ItemArtefact.Type.RING));
 		ItemRegistry.registerItemArtefact(registry, "ring_nameless", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.UNCOMMON, ItemArtefact.Type.RING));
+		ItemRegistry.registerItemArtefact(registry, "ring_frozen_dagger", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.RING));
+		ItemRegistry.registerItemArtefact(registry, "ring_forsaken", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.EPIC, ItemArtefact.Type.RING));
 
 		ItemRegistry.registerItemArtefact(registry, "charm_bone_bag", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.CHARM));
+		ItemRegistry.registerItemArtefact(registry, "charm_mummy_minion", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.CHARM));
 		ItemRegistry.registerItemArtefact(registry, "charm_scarab", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.EPIC, ItemArtefact.Type.CHARM));
 		ItemRegistry.registerItemArtefact(registry, "charm_mushroom_minion", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.EPIC, ItemArtefact.Type.CHARM));
 
+		ItemRegistry.registerItemArtefact(registry, "head_pest_crown", NecromancersDelight.MODID, new ItemPestCrown(EnumRarity.EPIC, ItemNewArtefact.Type.HEAD));
 
+
+		ItemRegistry.registerItem(registry, NecromancersDelight.MODID,"stink_bomb",  new ItemStinkBomb());
 	}
 
 }

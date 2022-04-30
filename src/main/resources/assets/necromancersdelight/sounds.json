@@ -1,10 +1,17 @@
 {
-    "spell.ice_chest":         {"category": "spells", "sounds": ["ebwizardry:conjure_large"]},
-    "spell.ice_shroud":        {"category": "spells", "sounds": ["ebwizardry:buff"]},
-    "spell.knock":             {"category": "spells", "sounds": ["ebwizardry:conjure"]},
-    "spell.lock":              {"category": "spells", "sounds": ["ebwizardry:conjure"]},
-    "spell.summon_mimic": 	   {"category": "spells", "sounds": ["ebwizardry:conjure_large"]},
-    "spell.summon_bound_soul": {"category": "spells", "sounds": ["ebwizardry:summon1", "ebwizardry:summon2"]},
-    "spell.mass_warp.start":   {"category": "spells", "sounds": ["portal/trigger"]},
-    "spell.summon_ally.start": {"category": "spells", "sounds": ["portal/trigger"]}
+    "spell.bound_bone_sword":           {"category": "spells", "sounds": ["ebwizardry:conjure"]},
+    "spell.bound_frozen_dagger":        {"category": "spells", "sounds": ["ebwizardry:conjure"]},
+    "spell.bound_spectral_dagger":      {"category": "spells", "sounds": ["ebwizardry:conjure"]},
+    "spell.forsaken_shield":            {"category": "spells", "sounds": ["ebwizardry:conjure"]},
+    "spell.stink_bomb":                 {"category": "spells", "sounds": ["random/bow"]},
+    "spell.holy_hand_grenade":          {"category": "spells", "sounds": ["random/bow"]},
+    "spell.ghost_bomb":                 {"category": "spells", "sounds": ["random/bow"]},
+    "spell.glowshroom":                 {"category": "spells", "sounds": ["ebwizardry:grow"]},
+    "spell.trial_of_mushrooms":         {"category": "spells", "sounds": ["ebwizardry:grow"]},
+    "spell.summon_salamander":          {"category": "spells", "sounds": ["mob/wither/idle1", "mob/wither/idle2", "mob/wither/idle3", "mob/wither/idle4"]},
+    "spell.wail_of_the_banshee":        {"category": "spells", "sounds": ["mob/wither/hurt1", "mob/wither/hurt2", "mob/wither/hurt3", "mob/wither/hurt4"]},
+    "spell.conjure_banshee":            {"category": "spells", "sounds": ["mob/wither/idle1", "mob/wither/idle2", "mob/wither/idle3", "mob/wither/idle4"]},
+    "spell.summon_vespa":               {"category": "spells", "sounds": ["mob/wither/idle1", "mob/wither/idle2", "mob/wither/idle3", "mob/wither/idle4"]},
+    "spell.conjure_mycosis":            {"category": "spells", "sounds": ["ebwizardry:summon1", "ebwizardry:summon2"]},
+    "spell.corrode":                    {"category": "spells", "sounds": ["mob/wither/shoot"]}
 }
