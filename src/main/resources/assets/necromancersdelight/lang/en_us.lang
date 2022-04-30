@@ -1,5 +1,50 @@
 
-# Generic
 
-spell.necromancersdelight:bound_frozen_dagger.name=Bound Frozen Dagger
-spell.necromancersdelight:bound_frozen_dagger.desc=TODO
+
+# Generic
+# PARSE_ESCAPES
+item.necromancersdelight\:amulet_malice_ward.desc=Grants a temporary shield when undeads are nearby (2 minutes cooldown)
+item.necromancersdelight\:amulet_malice_ward.name=Malice Ward
+item.necromancersdelight\:amulet_necromatic_ward.desc=Reduces damage from undeads by 15%%
+item.necromancersdelight\:amulet_necromatic_ward.name=Necromatic Ward
+item.necromancersdelight\:amulet_slowness_immunity.desc=Grants total immunity to slowness effects
+item.necromancersdelight\:amulet_slowness_immunity.name=Amulet of Tenacity
+item.necromancersdelight\:amulet_weakness_immunity.desc=Grants total immunity to weakness effects
+item.necromancersdelight\:amulet_weakness_immunity.name=Amulet of Vigour
+item.necromancersdelight\:charm_bone_bag.desc=Killing skeletons fills the bag over time. Once filled, the next minion spell conjures an OsVermis too
+item.necromancersdelight\:charm_bone_bag.name=Bone Bag
+item.necromancersdelight\:charm_mushroom_minion.desc=Mushrooms from the other hand are consumed as reagents to alter summoned creatures
+item.necromancersdelight\:charm_mushroom_minion.name=Book of Witchcraft
+item.necromancersdelight\:charm_scarab.desc=Summoned undeads are covered in a locust swarm, protecting them from sunlight
+item.necromancersdelight\:charm_scarab.name=Cursed Scarab
+item.necromancersdelight\:ring_frozen_dagger.desc=Conjured Ice Daggers have Frost Imbuement
+item.necromancersdelight\:ring_frozen_dagger.name=Frigidbone Ring
+item.necromancersdelight\:ring_legion.desc=Summoned Zombies are Unburied\nSet Effect(Ring of the Nameless): Summoned Unburied spawn with a random piece of equipment
+item.necromancersdelight\:ring_legion.name=Fallen Legion's Ring
+item.necromancersdelight\:ring_nameless.desc=Summoned Zombies are Unburied\nSet Effect(Fallen Legion's Ring): Summoned Unburied spawn with a random piece of equipment
+item.necromancersdelight\:ring_nameless.name=Ring of the Nameless
+spell.necromancersdelight\:bound_bone_sword.desc=TODO
+spell.necromancersdelight\:bound_bone_sword=Bound Bone Sword
+spell.necromancersdelight\:bound_frozen_dagger.desc=TODO
+spell.necromancersdelight\:bound_frozen_dagger=Bound Frozen Dagger
+spell.necromancersdelight\:conjure_banshee.desc=TODO
+spell.necromancersdelight\:conjure_banshee=Conjure Banshee
+spell.necromancersdelight\:conjure_mycosis.desc=TODO
+spell.necromancersdelight\:conjure_mycosis=Conjure Mycosis
+spell.necromancersdelight\:corrode.desc=TODO
+spell.necromancersdelight\:corrode=Corrode
+spell.necromancersdelight\:ghost_bomb.desc=TODO
+spell.necromancersdelight\:ghost_bomb=Ghost Bomb
+spell.necromancersdelight\:glowshroom.desc=Conjures a temporary Glow Shroom which illuminates the surrounding area. Lasts for 30 seconds.
+spell.necromancersdelight\:glowshroom=Glowshroom
+spell.necromancersdelight\:holy_hand_grenade.desc=...Then shalt thou count to three, no more, no less. Three shall be the number thou shalt count, and the number of the counting shall be three...
+spell.necromancersdelight\:holy_hand_grenade=Holy Hand Grenade
+spell.necromancersdelight\:summon_salamander.desc=TODO
+spell.necromancersdelight\:summon_salamander=Summon Salamander
+spell.necromancersdelight\:summon_vespa.desc=TODO
+spell.necromancersdelight\:summon_vespa=Summon Vespa
+spell.necromancersdelight\:trial_of_mushrooms.desc=Consume a special mushroom from the other hand for a short bonus effect.
+spell.necromancersdelight\:trial_of_mushrooms=Trial Of Mushrooms
+spell.necromancersdelight\:trial_of_mushrooms.missing_item="You must have a Glowshroom, Cordyceps, Veil Shroom or Bloodtooth in your other hand"
+spell.necromancersdelight\:wail_of_the_banshee.desc=TODO
+spell.necromancersdelight\:wail_of_the_banshee=Wail Of The Banshee

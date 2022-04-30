@@ -10,13 +10,15 @@
         "trades": true,
         "looting": true
     },
-    "tier": "apprentice",
-    "element": "ice",
-    "type": "utility",
+    "tier": "advanced",
+    "element": "earth",
+    "type": "attack",
     "cost": 30,
-    "chargeup": 20,
-    "cooldown": 60,
+    "chargeup": 10,
+    "cooldown": 20,
     "base_properties": {
-        "item_lifetime": 600
+        "effect_strength": 0,
+        "effect_duration": 400,
+        "range": 6
     }
 }

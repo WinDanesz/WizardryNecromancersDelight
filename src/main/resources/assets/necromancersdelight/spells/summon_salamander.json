@@ -10,13 +10,15 @@
         "trades": true,
         "looting": true
     },
-    "tier": "apprentice",
-    "element": "ice",
-    "type": "utility",
-    "cost": 30,
-    "chargeup": 20,
-    "cooldown": 60,
+    "tier": "advanced",
+    "element": "fire",
+    "type": "minion",
+    "cost": 80,
+    "chargeup": 35,
+    "cooldown": 200,
     "base_properties": {
-        "item_lifetime": 600
+        "minion_lifetime": 900,
+        "minion_count": 1,
+        "summon_radius": 3
     }
 }

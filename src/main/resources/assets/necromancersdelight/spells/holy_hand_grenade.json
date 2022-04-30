@@ -10,13 +10,13 @@
         "trades": true,
         "looting": true
     },
-    "tier": "apprentice",
-    "element": "ice",
-    "type": "utility",
-    "cost": 30,
-    "chargeup": 20,
-    "cooldown": 60,
+    "tier": "master",
+    "element": "healing",
+    "type": "projectile",
+    "cost": 100,
+    "chargeup": 40,
+    "cooldown": 160,
     "base_properties": {
-        "item_lifetime": 600
+        "range": 8
     }
 }

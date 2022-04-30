@@ -10,13 +10,13 @@
         "trades": true,
         "looting": true
     },
-    "tier": "apprentice",
-    "element": "ice",
-    "type": "utility",
-    "cost": 30,
+    "tier": "master",
+    "element": "necromancy",
+    "type": "attack",
+    "cost": 50,
     "chargeup": 20,
-    "cooldown": 60,
+    "cooldown": 120,
     "base_properties": {
-        "item_lifetime": 600
+        "range": 7
     }
 }

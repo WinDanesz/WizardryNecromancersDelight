@@ -1,0 +1,29 @@
+﻿{
+    "enabled": {
+        "book": true,
+        "scroll": true,
+        "wands": true,
+        "npcs": true,
+        "dispensers": true,
+        "commands": true,
+        "treasure": true,
+        "trades": true,
+        "looting": true
+    },
+    "tier": "novice",
+    "element": "earth",
+    "type": "utility",
+    "cost": 15,
+    "chargeup": 20,
+    "cooldown": 20,
+    "base_properties": {
+        "bloodtooth_amplifier": 2,
+        "bloodtooth_duration": 80,
+        "veilshroom_amplifier":  0,
+        "veilshroom_duration": 320,
+        "cordyceps_amplifier":  0,
+        "cordyceps_duration": 400,
+        "glowshroom_amplifier":  0,
+        "glowshroom_duration": 500
+    }
+}

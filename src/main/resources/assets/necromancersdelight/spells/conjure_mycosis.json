@@ -11,12 +11,14 @@
         "looting": true
     },
     "tier": "apprentice",
-    "element": "ice",
-    "type": "utility",
-    "cost": 30,
-    "chargeup": 20,
-    "cooldown": 60,
+    "element": "necromancy",
+    "type": "minion",
+    "cost": 40,
+    "chargeup": 35,
+    "cooldown": 120,
     "base_properties": {
-        "item_lifetime": 600
+        "minion_lifetime": 900,
+        "minion_count": 1,
+        "summon_radius": 4
     }
 }

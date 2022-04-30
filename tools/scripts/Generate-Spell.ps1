@@ -11,6 +11,7 @@ param (
 # Static
 $script:srcPath = "C:\git\WizardryNecromancersDelight\src"
 $script:modid = "necromancersdelight"
+$script:spellRegistryFile = "C:\git\WizardryNecromancersDelight\src\main\java\com\windanesz\necromancersdelight\registry\NDSpells.java"
 ###############################################
 
 ################ Item Specific ################ 
@@ -47,8 +48,10 @@ function Add-SpellJsonFile {
 "@
 
     $filePath = "$($script:srcPath)\main\resources\assets\$($script:modid)\spells\$($script:spellName).json"
-    $json | Out-File $filePath -Encoding utf8 -NoNewline
-    Write-Host "Generated $filePath spell json"
+    if (!(Test-Path -Path $filePath)) {
+        $json | Out-File $filePath -Encoding utf8 -NoNewline
+        Write-Host "Generated $filePath spell json"
+    }
 }
 
 function Add-LangFileEntry {
@@ -65,8 +68,11 @@ function Create-Texture {
     $texturePath = $script:srcPath + "\main\resources\assets\$($script:modid)\textures\spells\$($script:spellName).png"
     if (!(Test-Path -Path $texturePath -PathType Leaf)) {
         $genericTexture = $script:srcPath + "\main\resources\assets\$($script:modid)\textures\spells\none.png"
-        Copy-Item $genericTexture -Destination $texturePath
-        Write-Host "Generated $texturePath texture"
+
+        if (!(Test-Path -Path $texturePath)) {
+            Copy-Item $genericTexture -Destination $texturePath
+            Write-Host "Generated $texturePath texture"
+        }
     }
 }
 
@@ -86,8 +92,23 @@ function Create-Texture {
 
 #endregion Functions
 
-Add-LangFileEntry -Entry "spell.$($script:modid):$($script:spellName).name=TODO"
-Add-LangFileEntry -Entry "spell.$($script:modid):$($script:spellName).desc=TODO"
+
+$displayName = (Get-Culture).TextInfo.ToTitleCase([String]::Join(" ", $spellName.Split("_")))
+Add-LangFileEntry -Entry "spell.$($script:modid)\:$($script:spellName).desc=TODO"
+Add-LangFileEntry -Entry "spell.$($script:modid)\:$($script:spellName)=$displayName"
 Create-Texture
 Add-SpellJsonFile
 
+# Add member
+$lineOfLastSpell = (Select-String -Path $script:spellRegistryFile -Pattern 'public\sstatic\sfinal\sSpell')[-1].LineNumber
+$textToAdd = "`n    public static final Spell $($script:spellName) = placeholder();"
+$fileContent = Get-Content $script:spellRegistryFile
+$fileContent[$lineOfLastSpell-1] += $textToAdd
+$fileContent | Set-Content $script:spellRegistryFile
+
+# Add registry placeholder
+$lineOfLastSpell = (Select-String -Path $script:spellRegistryFile -Pattern 'registry\.register\(new\s')[-1].LineNumber
+$textToAdd = "`n        registry.register(new <<ADD SPELL>>);"
+$fileContent = Get-Content $script:spellRegistryFile
+$fileContent[$lineOfLastSpell-1] += $textToAdd
+$fileContent | Set-Content $script:spellRegistryFile

@@ -11,9 +11,9 @@
         "looting": true
     },
     "tier": "apprentice",
-    "element": "ice",
+    "element": "necromancy",
     "type": "utility",
-    "cost": 30,
+    "cost": 40,
     "chargeup": 20,
     "cooldown": 60,
     "base_properties": {

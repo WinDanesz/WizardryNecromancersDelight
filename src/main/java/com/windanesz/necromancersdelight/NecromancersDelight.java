@@ -3,6 +3,7 @@ package com.windanesz.necromancersdelight;
 import com.windanesz.necromancersdelight.client.NDGuiHandler;
 import com.windanesz.necromancersdelight.network.SBPacketHandler;
 import com.windanesz.necromancersdelight.registry.NDBlocks;
+import com.windanesz.wizardryutils.registry.ItemModelRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -42,6 +43,7 @@ public class NecromancersDelight {
 		// content mods
 
 		proxy.registerRenderers();
+		ItemModelRegistry.registerModForAutoItemModelRegistry(MODID);
 
 		// Register things that don't have registries
 		NDBlocks.registerTileEntities();

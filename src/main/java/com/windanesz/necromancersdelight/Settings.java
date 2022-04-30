@@ -1,34 +1,14 @@
 package com.windanesz.necromancersdelight;
 
-import electroblob.wizardry.Wizardry;
-import electroblob.wizardry.item.ItemArtefact;
-import net.minecraft.item.Item;
 import net.minecraftforge.common.config.Config;
 import net.minecraftforge.common.config.ConfigManager;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-import static electroblob.wizardry.Settings.ARTEFACTS_CATEGORY;
-
 @Config(modid = NecromancersDelight.MODID, name = "necromancersdelight") // No fancy configs here so we can use the annotation, hurrah!
 public class Settings {
 
-	/**
-	 * Helper method to figure out if an item was disabled in the ebwiz configs, as unfortunately temArtefact#enabled private and has no getter method
-	 *
-	 * @param artefact to check
-	 * @return true if the item is enabled (or if it has no config)
-	 */
-	public static boolean isArtefactEnabled(Item artefact) {
-		if (artefact instanceof ItemArtefact &&
-				(Wizardry.settings.getConfigCategory(ARTEFACTS_CATEGORY).containsKey(artefact.getRegistryName().toString()))) {
-			return (Wizardry.settings.getConfigCategory(ARTEFACTS_CATEGORY).get(artefact.getRegistryName().toString()).getBoolean());
-		}
-
-		// no setting to control this item so it shouldn't be disabled..
-		return true;
-	}
 
 	@SuppressWarnings("unused")
 	@Mod.EventBusSubscriber(modid = NecromancersDelight.MODID)
@@ -51,6 +31,15 @@ public class Settings {
 	public static GeneralSettings generalSettings = new GeneralSettings();
 
 	public static class GeneralSettings {
+		@Config.Name("Malice Ward Absorption Amount")
+		@Config.Comment("Sets the Absorption level the Malice Ward amulet gives.")
+		@Config.RequiresMcRestart
+		public int amulet_malice_ward_absorption_level = 1;
+
+		@Config.Name("Malice Ward Cooldown")
+		@Config.Comment("Sets the cooldown of the Malice Ward amulet (in ticks, 20 = 1 second).")
+		@Config.RequiresMcRestart
+		public int amulet_malice_ward_cooldown = 1200;
 	}
 
 	@Config.Name("Spell Tweaks Settings")
