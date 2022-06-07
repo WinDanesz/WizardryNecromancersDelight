@@ -1,6 +1,10 @@
 package com.windanesz.necromancersdelight.registry;
 
 import com.windanesz.necromancersdelight.NecromancersDelight;
+import com.windanesz.necromancersdelight.entity.living.EntityElementalLeechMinion;
+import com.windanesz.necromancersdelight.entity.living.EntityManaLeechMinion;
+import com.windanesz.necromancersdelight.entity.living.EntityVespaMinion;
+import com.windanesz.necromancersdelight.entity.projectile.EntityFrostBomb;
 import com.windanesz.necromancersdelight.entity.projectile.EntityStinkBomb;
 import com.windanesz.wizardryutils.registry.EntityRegistry;
 import net.minecraftforge.event.RegistryEvent;
@@ -23,6 +27,9 @@ public class NDEntities {
 
 		IForgeRegistry<EntityEntry> registry = event.getRegistry();
 		registry.register(EntityRegistry.createEntry(EntityStinkBomb.class, "stink_bomb", NecromancersDelight.MODID, EntityRegistry.TrackingType.PROJECTILE).build());
-
+		registry.register(EntityRegistry.createEntry(EntityFrostBomb.class, "frost_bomb", NecromancersDelight.MODID, EntityRegistry.TrackingType.PROJECTILE).build());
+		registry.register(EntityRegistry.createEntry(EntityManaLeechMinion.class, "mana_leech_minion", NecromancersDelight.MODID, EntityRegistry.TrackingType.LIVING).build());
+		registry.register(EntityRegistry.createEntry(EntityElementalLeechMinion.class, "elemental_leech_minion", NecromancersDelight.MODID, EntityRegistry.TrackingType.LIVING).build());
+		registry.register(EntityRegistry.createEntry(EntityVespaMinion.class, "vespa_minion", NecromancersDelight.MODID, EntityRegistry.TrackingType.LIVING).build());
 	}
 }

@@ -1,6 +1,6 @@
 package com.windanesz.necromancersdelight.item;
 
-import com.windanesz.necromancersdelight.entity.projectile.EntityStinkBomb;
+import com.windanesz.necromancersdelight.entity.projectile.EntityFrostBomb;
 import electroblob.wizardry.registry.WizardrySounds;
 import electroblob.wizardry.registry.WizardryTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,9 +11,9 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class ItemStinkBomb extends Item {
+public class ItemFrostBomb extends Item {
 
-	public ItemStinkBomb(){
+	public ItemFrostBomb(){
 		setMaxStackSize(16);
 		setCreativeTab(WizardryTabs.WIZARDRY);
 	}
@@ -32,7 +32,7 @@ public class ItemStinkBomb extends Item {
 		player.getCooldownTracker().setCooldown(this, 20);
 
 		if(!world.isRemote){
-			EntityStinkBomb bomb = new EntityStinkBomb(world);
+			EntityFrostBomb bomb = new EntityFrostBomb(world);
 			bomb.aim(player, 1);
 			world.spawnEntity(bomb);
 		}

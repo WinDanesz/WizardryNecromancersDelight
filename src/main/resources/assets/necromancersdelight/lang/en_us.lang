@@ -1,5 +1,9 @@
 # PARSE_ESCAPES
 entity.necromancersdelight\:stink_bomb.name=Magic
+entity.necromancersdelight\:frost_bomb.name=Magic
+entity.necromancersdelight\:mana_leech_minion.name=Leech
+entity.necromancersdelight\:elemental_leech_minion.name=Leech
+entity.necromancersdelight\:vespa_minion.name=Vespa Minion
 
 item.necromancersdelight\:amulet_malice_ward.desc=Grants a temporary shield when undeads are nearby (2 minutes cooldown)
 item.necromancersdelight\:amulet_malice_ward.name=Malice Ward
@@ -28,6 +32,7 @@ item.necromancersdelight\:ring_legion.name=Fallen Legion's Ring
 item.necromancersdelight\:ring_nameless.desc=Summoned Zombies are Unburied\nSet Effect(Fallen Legion's Ring): Summoned Unburied spawn with a random piece of equipment
 item.necromancersdelight\:ring_nameless.name=Ring of the Nameless
 item.necromancersdelight\:stink_bomb.name=Stink Bomb
+item.necromancersdelight\:frost_bomb.name=Frost Bomb
 
 spell.necromancersdelight\:bound_bone_sword.desc=Conjure a temporary bone sword from the bones of your fallen enemies. The sword disappears after 30 seconds.
 spell.necromancersdelight\:bound_bone_sword=Bound Bone Sword
@@ -62,3 +67,16 @@ spell.necromancersdelight\:wail_of_the_banshee.desc=Unleash the scream of the Ba
 spell.necromancersdelight\:wail_of_the_banshee=Wail Of The Banshee
 potion.necromancersdelight\:poisonous_spore=Poisonous Spore
 potion.necromancersdelight\:locusts=Locusts
+spell.necromancersdelight\:frost_bomb.desc=Launches a freezing bomb in the direction you are pointing which explodes on impact, damaging and chilling targets.
+spell.necromancersdelight\:frost_bomb=Frost Bomb
+spell.necromancersdelight\:summon_mana_leech.desc=Conjures a Mana Leech. The leech attaches itself to enemies, continuously draining their mana and doubling spell costs.
+spell.necromancersdelight\:summon_mana_leech=Summon Mana Leech
+item.necromancersdelight\:amulet_leechlink.name=Leechlink Amulet
+item.necromancersdelight\:amulet_leechlink.desc=Mana Leeches return 50%% stolen mana to their owner
+item.necromancersdelight\:charm_spellvenom.name=Spell-Sapping Venom
+item.necromancersdelight\:charm_spellvenom.desc=Mana Leeches weaken their target's spells
+spell.necromancersdelight\:summon_elemental_leech.desc=Conjures an Elemental Leech to fight for you.
+spell.necromancersdelight\:summon_elemental_leech=Summon Elemental Leech
+item.necromancersdelight\:amulet_leech_crystal.name=Leech Crystal Amulet
+item.necromancersdelight\:amulet_leech_crystal.desc=The Summon Elemental Leech spell always summons a leech of this amulet's element. Can be bound to an element at the Arcane Workbench using a crystal
+item.necromancersdelight\:amulet_leech_crystal.desc2=Bound element: %s

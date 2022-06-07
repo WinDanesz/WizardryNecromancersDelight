@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "mod_lavacow:foul_bristle"
+        },
+        {
+            "item": "mod_lavacow:foul_bristle"
+        },
+        {
+            "item": "minecraft:glass_bottle"
+        },
+        {
+            "item": "minecraft:gunpowder"
+        }
+    ],
+    "result": {
+        "item": "necromancersdelight:stink_bomb",
+        "count": 3
+    }
+}

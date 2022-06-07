@@ -6,6 +6,7 @@ import com.Fishmod.mod_LavaCow.entities.EntityMummy;
 import com.Fishmod.mod_LavaCow.entities.tameable.EntityUnburied;
 import com.Fishmod.mod_LavaCow.init.AddRecipes;
 import com.Fishmod.mod_LavaCow.init.Modblocks;
+import com.windanesz.necromancersdelight.entity.living.EntityManaLeechMinion;
 import com.windanesz.necromancersdelight.registry.NDItems;
 import com.windanesz.necromancersdelight.registry.NDPotions;
 import com.windanesz.wizardryutils.capability.SummonedCreatureData;
@@ -96,7 +97,7 @@ public class NDEventHandler {
 	}
 
 	@SubscribeEvent(priority = EventPriority.LOW)
-	public static void onSpellCastPreEvent(SpellCastEvent.Post event) {
+	public static void onSpellCastPostEvent(SpellCastEvent.Post event) {
 
 		if (!event.getWorld().isRemote && event.getCaster() instanceof EntityPlayer) {
 
@@ -118,6 +119,23 @@ public class NDEventHandler {
 						BaublesIntegration.setArtefactToSlot(player, addCharmProgress(bag, 0), ItemArtefact.Type.CHARM);
 					}
 				}
+			}
+		}
+	}
+
+	@SubscribeEvent(priority = EventPriority.LOW)
+	public static void onSpellCastPreEvent(SpellCastEvent.Pre event) {
+
+		if (!event.getWorld().isRemote && event.getCaster() != null && event.getCaster().getRidingEntity() instanceof EntityManaLeechMinion) {
+
+			SpellModifiers modifiers = event.getModifiers();
+			modifiers.set(SpellModifiers.COST, modifiers.get(SpellModifiers.COST) * 2, false);
+
+			if( ((EntityManaLeechMinion) event.getCaster().getRidingEntity()).isWeakensSpells()) {
+				modifiers.set(SpellModifiers.POTENCY, modifiers.get(SpellModifiers.POTENCY) * 0.6f, false);
+				modifiers.set(WizardryItems.blast_upgrade, modifiers.get(WizardryItems.blast_upgrade) * 0.6f, false);
+				modifiers.set(WizardryItems.range_upgrade, modifiers.get(WizardryItems.range_upgrade) * 0.6f, false);
+				modifiers.set(WizardryItems.duration_upgrade, modifiers.get(WizardryItems.duration_upgrade) * 0.6f, false);
 			}
 		}
 	}
