@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Random;
 
 @Mod(modid = NecromancersDelight.MODID, name = NecromancersDelight.NAME, version = "@VERSION@", acceptedMinecraftVersions = "[@MCVERSION@]",
-		dependencies = "required-after:ebwizardry@[@WIZARDRY_VERSION@,4.4);required-after:mod_lavacow@[@FUR_VERSION@,4.4)")
+		dependencies = "required-after:ebwizardry@[@WIZARDRY_VERSION@,4.4);required-after:wizardryutils@[@WIZARDRY_UTILS_VERSION@,2.0);required-after:mod_lavacow@[@FUR_VERSION@,3.0)")
 public class NecromancersDelight {
 
 	public static final String MODID = "necromancersdelight";
@@ -39,8 +39,6 @@ public class NecromancersDelight {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		logger = event.getModLog();
-
-		// content mods
 
 		proxy.registerRenderers();
 		ItemModelRegistry.registerModForAutoItemModelRegistry(MODID);
