@@ -1,15 +1,16 @@
-<h2>Version v1.1.2 - 4/15/2022</h2>
+<h2>Version v1.0.0 - 6/9/2022</h2>
 <p>&nbsp;</p>
 <h3>What's Changed</h3>
 <p><span style="font-size: 1.2rem;">&nbsp;</span></p>
-<h4><strong>Refactoring</strong></h4>
-<p>- Updated getDescriptionTranslationKey</p>
+<h4><strong>Features</strong></h4>
+<p>- Added a bunch of new spells and artefacts</p>
+<p>- Added bunch more spells and artefacts</p>
+<p>- Some more spells</p>
 
 <h4><strong>Bug Fixes</strong></h4>
-<p>- Fixed SummonedCreatureData.isValidTarget check</p>
-<p>- Added some missing sounds</p>
-<p>- Fixed server load issues with Treasure2 Integration</p>
-<p>- Fixed server load issues with Waystones Integration</p>
+<p>- Fixed dependency requirement</p>
+<p>- Fixed wizardryutils_projectid</p>
+<p>- Fixed curse_relations</p>
 <p>&nbsp;</p>
 <p>As always, the easiest way to get help or feedback is through the Discord server! Find the link on the CurseForge page.</p>
 <p>&nbsp;</p>
