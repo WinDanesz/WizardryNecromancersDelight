@@ -261,7 +261,7 @@ public class NDEventHandler {
 				}
 
 				// unburied ring logic
-				if (unburiedRings > 0 && !mobChanged) {
+				if (unburiedRings > 0 && !mobChanged && event.getEntity() instanceof EntityZombieMinion && !mobChanged) {
 					EntityZombieMinion zombie = (EntityZombieMinion) event.getEntity();
 
 					// only need to apply the replacement logic once
