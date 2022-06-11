@@ -155,6 +155,9 @@ public class NDEventHandler {
 			boolean gotHelmetCharm = false;
 			int unburiedRings = 0;
 
+			if (ItemArtefact.isArtefactActive(player, NDItems.ring_nameless)) unburiedRings++;
+			if (ItemArtefact.isArtefactActive(player, NDItems.ring_legion)) unburiedRings++;
+
 			for (ItemArtefact artefact : ItemArtefact.getActiveArtefacts(player)) {
 
 				if (artefact == NDItems.charm_mushroom_minion && !player.getHeldItemOffhand().isEmpty()) {
@@ -197,9 +200,6 @@ public class NDEventHandler {
 					event.getWorld().spawnEntity(minion);
 					event.setCanceled(true);
 					mobChanged = true;
-
-				} else if (artefact == NDItems.ring_legion || artefact == NDItems.ring_nameless) {
-					unburiedRings++;
 
 				} else if (artefact == WizardryItems.charm_undead_helmets) {
 					gotHelmetCharm = true;
@@ -259,46 +259,47 @@ public class NDEventHandler {
 					world.spawnEntity(forsaken);
 					event.setCanceled(true);
 				}
+			}
 
-				// unburied ring logic
-				if (unburiedRings > 0 && !mobChanged && event.getEntity() instanceof EntityZombieMinion && !mobChanged) {
-					EntityZombieMinion zombie = (EntityZombieMinion) event.getEntity();
+			// unburied ring logic
+			if (unburiedRings > 0 && !mobChanged && event.getEntity() instanceof EntityZombieMinion) {
+				EntityZombieMinion zombie = (EntityZombieMinion) event.getEntity();
 
-					// only need to apply the replacement logic once
-					EntityUnburied minion = new EntityUnburied(event.getWorld());
-					SummonedCreatureData minionData = SummonedCreatureData.get(minion);
-					minion.setPosition(zombie.posX, zombie.posY, zombie.posZ);
-					minionData.setCaster((EntityPlayer) player);
-					minionData.setLifetime(zombie.getLifetime());
+				// only need to apply the replacement logic once
+				EntityUnburied minion = new EntityUnburied(event.getWorld());
+				SummonedCreatureData minionData = SummonedCreatureData.get(minion);
+				minion.setPosition(zombie.posX, zombie.posY, zombie.posZ);
+				minionData.setCaster((EntityPlayer) player);
+				minionData.setLifetime(zombie.getLifetime());
 
-					if (unburiedRings == 2) {
-						// got the set; if also have the charm_undead_helmets artefact, having a helmet is guaranteed and it picks another piece
-						int i = event.getWorld().rand.nextInt(gotHelmetCharm ? 4 : 5);
-						switch (i) {
-							case 0:
-								minion.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SHOVEL));
-								break;
-							case 1:
-								minion.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));
-								break;
-							case 2:
-								minion.setItemStackToSlot(EntityEquipmentSlot.FEET, new ItemStack(Items.LEATHER_BOOTS));
-								break;
-							case 3:
-								minion.setItemStackToSlot(EntityEquipmentSlot.LEGS, new ItemStack(Items.LEATHER_LEGGINGS));
-								break;
-							case 4:
-								minion.setItemStackToSlot(EntityEquipmentSlot.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE));
-								break;
-							case 5:
-								minion.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET));
-						}
-						if (gotHelmetCharm) { minion.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET)); }
+				if (unburiedRings == 2) {
+					// got the set; if also have the charm_undead_helmets artefact, having a helmet is guaranteed and it picks another piece
+					int i = event.getWorld().rand.nextInt(gotHelmetCharm ? 4 : 5);
+					switch (i) {
+						case 0:
+							minion.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, new ItemStack(Items.STONE_SHOVEL));
+							break;
+						case 1:
+							minion.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, new ItemStack(Items.SHIELD));
+							break;
+						case 2:
+							minion.setItemStackToSlot(EntityEquipmentSlot.FEET, new ItemStack(Items.LEATHER_BOOTS));
+							break;
+						case 3:
+							minion.setItemStackToSlot(EntityEquipmentSlot.LEGS, new ItemStack(Items.LEATHER_LEGGINGS));
+							break;
+						case 4:
+							minion.setItemStackToSlot(EntityEquipmentSlot.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE));
+							break;
+						case 5:
+							minion.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET));
+							break;
 					}
-					event.getWorld().spawnEntity(minion);
-					event.setCanceled(true);
-					mobChanged = true;
+					if (gotHelmetCharm) {
+						minion.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET)); }
 				}
+				event.getWorld().spawnEntity(minion);
+				event.setCanceled(true);
 			}
 		}
 	}
