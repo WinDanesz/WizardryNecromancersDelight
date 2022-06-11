@@ -7,8 +7,8 @@ entity.necromancersdelight\:vespa_minion.name=Vespa Minion
 
 item.necromancersdelight\:amulet_malice_ward.desc=Grants a temporary shield when undeads are nearby (2 minutes cooldown)
 item.necromancersdelight\:amulet_malice_ward.name=Malice Ward
-item.necromancersdelight\:amulet_necromatic_ward.desc=Reduces damage from undeads by 15%%
-item.necromancersdelight\:amulet_necromatic_ward.name=Necromatic Ward
+item.necromancersdelight\:amulet_necromantic_ward.desc=Reduces damage from undeads by 15%%
+item.necromancersdelight\:amulet_necromantic_ward.name=Necromantic Ward
 item.necromancersdelight\:amulet_slowness_immunity.desc=Grants total immunity to slowness effects
 item.necromancersdelight\:amulet_slowness_immunity.name=Amulet of Tenacity
 item.necromancersdelight\:amulet_weakness_immunity.desc=Grants total immunity to weakness effects

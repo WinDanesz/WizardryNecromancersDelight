@@ -306,7 +306,7 @@ public class NDEventHandler {
 	@SubscribeEvent
 	public static void onLivingDamageEvent(LivingDamageEvent event) {
 		if (event.getEntity() instanceof EntityPlayer && event.getSource().getTrueSource() != null) {
-			if (WizardryUtilsTools.isEntityConsideredUndead(event.getSource().getTrueSource()) && (ItemArtefact.isArtefactActive((EntityPlayer) event.getEntity(), NDItems.amulet_necromatic_ward))) {
+			if (WizardryUtilsTools.isEntityConsideredUndead(event.getSource().getTrueSource()) && (ItemArtefact.isArtefactActive((EntityPlayer) event.getEntity(), NDItems.amulet_necromantic_ward))) {
 				event.setAmount(event.getAmount() * 0.85f);
 			}
 		}

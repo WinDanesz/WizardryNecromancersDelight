@@ -38,7 +38,7 @@ public final class NDItems {
 	public static final Item amulet_slowness_immunity = placeholder();
 	public static final Item amulet_weakness_immunity = placeholder();
 	public static final Item amulet_malice_ward = placeholder();
-	public static final Item amulet_necromatic_ward = placeholder();
+	public static final Item amulet_necromantic_ward = placeholder();
 	public static final Item amulet_leechlink = placeholder();
 	public static final Item amulet_leech_crystal = placeholder();
 
@@ -65,7 +65,7 @@ public final class NDItems {
 	public static void register(RegistryEvent.Register<Item> event) {
 		IForgeRegistry<Item> registry = event.getRegistry();
 
-		ItemRegistry.registerItemArtefact(registry, "amulet_necromatic_ward", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.UNCOMMON, ItemArtefact.Type.AMULET));
+		ItemRegistry.registerItemArtefact(registry, "amulet_necromantic_ward", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.UNCOMMON, ItemArtefact.Type.AMULET));
 		ItemRegistry.registerItemArtefact(registry, "amulet_slowness_immunity", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.AMULET));
 		ItemRegistry.registerItemArtefact(registry, "amulet_weakness_immunity", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.AMULET));
 		ItemRegistry.registerItemArtefact(registry, "amulet_malice_ward", NecromancersDelight.MODID, new ItemMaliceWard(EnumRarity.RARE, ItemArtefact.Type.AMULET));
