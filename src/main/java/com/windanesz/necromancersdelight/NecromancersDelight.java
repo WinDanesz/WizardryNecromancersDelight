@@ -3,6 +3,7 @@ package com.windanesz.necromancersdelight;
 import com.windanesz.necromancersdelight.client.NDGuiHandler;
 import com.windanesz.necromancersdelight.network.SBPacketHandler;
 import com.windanesz.necromancersdelight.registry.NDBlocks;
+import com.windanesz.necromancersdelight.registry.NDItems;
 import com.windanesz.wizardryutils.registry.ItemModelRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
@@ -55,6 +56,7 @@ public class NecromancersDelight {
 		proxy.init();
 		SBPacketHandler.initPackets();
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, new NDGuiHandler());
+		NDItems.registerDispenseBehaviours();
 
 	}
 

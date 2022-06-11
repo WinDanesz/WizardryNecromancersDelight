@@ -1,6 +1,8 @@
 package com.windanesz.necromancersdelight.registry;
 
 import com.windanesz.necromancersdelight.NecromancersDelight;
+import com.windanesz.necromancersdelight.entity.projectile.EntityFrostBomb;
+import com.windanesz.necromancersdelight.entity.projectile.EntityStinkBomb;
 import com.windanesz.necromancersdelight.item.ItemFrostBomb;
 import com.windanesz.necromancersdelight.item.ItemLeechCrystalAmulet;
 import com.windanesz.necromancersdelight.item.ItemMaliceWard;
@@ -9,8 +11,14 @@ import com.windanesz.necromancersdelight.item.ItemStinkBomb;
 import com.windanesz.wizardryutils.item.ItemNewArtefact;
 import com.windanesz.wizardryutils.registry.ItemRegistry;
 import electroblob.wizardry.item.ItemArtefact;
+import net.minecraft.block.BlockDispenser;
+import net.minecraft.dispenser.BehaviorProjectileDispense;
+import net.minecraft.dispenser.IPosition;
+import net.minecraft.entity.IProjectile;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -82,4 +90,29 @@ public final class NDItems {
 		ItemRegistry.registerItem(registry, NecromancersDelight.MODID,"amulet_leech_crystal",  new ItemLeechCrystalAmulet(EnumRarity.RARE, ItemArtefact.Type.AMULET));
 	}
 
+	/** Called from init() in the main mod class to register wizardry's dispenser behaviours. */
+	public static void registerDispenseBehaviours(){
+
+		BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(stink_bomb, new BehaviorProjectileDispense(){
+
+			@Override
+			protected IProjectile getProjectileEntity(World world, IPosition position, ItemStack stack){
+				EntityStinkBomb entity = new EntityStinkBomb(world);
+				entity.setPosition(position.getX(), position.getY(), position.getZ());
+				return entity;
+			}
+
+		});
+
+		BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(frost_bomb, new BehaviorProjectileDispense(){
+
+			@Override
+			protected IProjectile getProjectileEntity(World world, IPosition position, ItemStack stack){
+				EntityFrostBomb entity = new EntityFrostBomb(world);
+				entity.setPosition(position.getX(), position.getY(), position.getZ());
+				return entity;
+			}
+
+		});
+	}
 }
