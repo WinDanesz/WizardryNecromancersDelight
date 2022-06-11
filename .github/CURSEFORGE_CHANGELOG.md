@@ -1,16 +1,12 @@
-<h2>Version v1.0.0 - 6/9/2022</h2>
+<h2>Version v1.0.1 - 6/11/2022</h2>
 <p>&nbsp;</p>
 <h3>What's Changed</h3>
 <p><span style="font-size: 1.2rem;">&nbsp;</span></p>
-<h4><strong>Features</strong></h4>
-<p>- Added a bunch of new spells and artefacts</p>
-<p>- Added bunch more spells and artefacts</p>
-<p>- Some more spells</p>
-
 <h4><strong>Bug Fixes</strong></h4>
-<p>- Fixed dependency requirement</p>
-<p>- Fixed wizardryutils_projectid</p>
-<p>- Fixed curse_relations</p>
+<p>- Fixed Stink and Frost Bomb not working with dispensers</p>
+<p>- Fixed typo in necromantic ward's name</p>
+<p>- Fixed crash with various summons</p>
+<p>- Fixed Ring of the Nameless and Legion ring</p>
 <p>&nbsp;</p>
 <p>As always, the easiest way to get help or feedback is through the Discord server! Find the link on the CurseForge page.</p>
 <p>&nbsp;</p>

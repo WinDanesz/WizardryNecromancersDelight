@@ -2,6 +2,12 @@
   "homepage": "https://www.curseforge.com/minecraft/mc-mods/wizardry-necromancers-delight",
   "promos": {
     "1.12.2-latest": "1.0.1",
-    "1.12.2-recommended": "1.0.1"
+    "1.12.2-recommended": "1.0.1",
+    "'1": {
+      "12": {
+        "2-latest'": "v1.0.1",
+        "2-recommended'": "v1.0.1"
+      }
+    }
   }
 }
