@@ -253,6 +253,12 @@ if (System.getenv('USE_ALPHAS').equals('true')) {
                 commandLine "echo", "##[set-output name=version;]${project.version}";
             }
             exec {
+                commandLine "echo", "##[set-output name=name;]${project.name}";
+            }
+            exec {
+                commandLine "echo", "##[set-output name=url;]${project.url}";
+            }
+            exec {
                 commandLine "echo", "##[set-output name=commitlog;]" + "{\"content\":\"" + (project.hasProperty('hook_content') ? project.hook_content : "") + "\",\"embeds\":[{\"author\":{\"name\":\"WinDanesz\",\"url\":\"https://www.curseforge.com/minecraft/mc-mods/ancient-spellcraft\",\"icon_url\":\"https://avatars.githubusercontent.com/u/31292708?s=48&v=4\"},\"title\":\"${project.mod_id}-alpha-${project.version}\",\"url\":\"https://github.com/${project.github}/releases/tag/alpha-${project.version}\",\"color\":14700288,\"description\":\"" + log + "\"}]}";
             }
         }
@@ -279,6 +285,12 @@ if (System.getenv('USE_ALPHAS').equals('true')) {
             exec {
                 commandLine "echo", "##[set-output name=version;]${project.version}";
             }
+            exec {
+                commandLine "echo", "##[set-output name=name;]${project.name}";
+            }
+            exec {
+                commandLine "echo", "##[set-output name=url;]${project.url}";
+            }
         }
     }
     version = "${project.mc_version}-${project.mod_version}"
@@ -286,7 +298,7 @@ if (System.getenv('USE_ALPHAS').equals('true')) {
 
 processResources {
     // this will ensure that this task is redone when the versions change.
-    inputs.property "version", project.mod_version.toString()
+    inputs.property "version", version.toString()
     inputs.property "mcversion", project.mc_version.toString()
 
     // Get the CREDITS.md and put it into the mcmod.info credits as json
@@ -301,12 +313,13 @@ processResources {
         include 'pack.mcmeta'
         include 'mcmod.info'
         // replace tokens in mcmod.info
-        expand 'version': project.mod_version,
-                'mcversion': project.mc_version,
+        expand 'version': version.toString(),
+                'mcversion': project.mc_version.toString(),
                 'modid': project.mod_id,
                 'name': project.name,
                 'description': project.description,
                 'url': project.url,
+                'update_url': project.update_url,
                 "credits" : credits
     }
 
@@ -316,12 +329,10 @@ processResources {
 task replaceTokens(type: Sync) {
     // replace @TOKENS@ in main file
     from sourceSets.main.java
+    inputs.property 'version', project.mc_version.toString()
     filter(ReplaceTokens, tokens: [VERSION: "${project.mod_version}".toString()])
     filter(ReplaceTokens, tokens: [MCVERSION: "${project.mc_version}".toString()])
     filter(ReplaceTokens, tokens: [WIZARDRY_VERSION: "${project.wizardry_version}".toString()])
-    filter(ReplaceTokens, tokens: [WIZARDRY_UTILS_VERSION: "${project.wizardry_utils_version}".toString()])
-    filter(ReplaceTokens, tokens: [FUR_VERSION: "${project.fur_version}".toString()])
-
     into "$buildDir/src"
 }
 

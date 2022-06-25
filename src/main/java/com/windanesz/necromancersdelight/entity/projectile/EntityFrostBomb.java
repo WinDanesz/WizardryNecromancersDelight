@@ -36,14 +36,13 @@ public class EntityFrostBomb extends EntityBomb {
 		Entity entityHit = rayTrace.entityHit;
 
 		if (entityHit != null) {
-			// This is if the poison bomb gets a direct hit
+			// This is if the frost bomb gets a direct hit
 			float damage = NDSpells.frost_bomb.getProperty(Spell.DIRECT_DAMAGE).floatValue() * damageMultiplier;
 
 			entityHit.attackEntityFrom(
-					MagicDamage.causeIndirectMagicDamage(this, this.getThrower(), DamageType.POISON).setProjectile(),
-					damage);
+					MagicDamage.causeIndirectMagicDamage(this, this.getThrower(), DamageType.FROST).setProjectile(), damage);
 
-			if (entityHit instanceof EntityLivingBase && !MagicDamage.isEntityImmune(DamageType.POISON, entityHit)) {
+			if (entityHit instanceof EntityLivingBase && !MagicDamage.isEntityImmune(DamageType.FROST, entityHit)) {
 				((EntityLivingBase) entityHit).addPotionEffect(new PotionEffect(WizardryPotions.frost,
 						NDSpells.frost_bomb.getProperty(Spell.DIRECT_EFFECT_DURATION).intValue(),
 						NDSpells.frost_bomb.getProperty(Spell.DIRECT_EFFECT_STRENGTH).intValue()));
@@ -84,9 +83,9 @@ public class EntityFrostBomb extends EntityBomb {
 
 			for (EntityLivingBase target : targets) {
 				if (target != entityHit && target != this.getThrower()
-						&& !MagicDamage.isEntityImmune(DamageType.POISON, target)) {
+						&& !MagicDamage.isEntityImmune(DamageType.FROST, target)) {
 					target.attackEntityFrom(
-							MagicDamage.causeIndirectMagicDamage(this, this.getThrower(), DamageType.POISON),
+							MagicDamage.causeIndirectMagicDamage(this, this.getThrower(), DamageType.FROST),
 							NDSpells.frost_bomb.getProperty(Spell.SPLASH_DAMAGE).floatValue() * damageMultiplier);
 					target.addPotionEffect(new PotionEffect(WizardryPotions.frost,
 							NDSpells.frost_bomb.getProperty(Spell.SPLASH_EFFECT_DURATION).intValue(),
