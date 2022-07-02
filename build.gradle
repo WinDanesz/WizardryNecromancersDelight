@@ -333,6 +333,9 @@ task replaceTokens(type: Sync) {
     filter(ReplaceTokens, tokens: [VERSION: "${project.mod_version}".toString()])
     filter(ReplaceTokens, tokens: [MCVERSION: "${project.mc_version}".toString()])
     filter(ReplaceTokens, tokens: [WIZARDRY_VERSION: "${project.wizardry_version}".toString()])
+    filter(ReplaceTokens, tokens: [WIZARDRY_UTILS_VERSION: "${project.wizardry_utils_version}".toString()])
+    filter(ReplaceTokens, tokens: [FUR_VERSION: "${project.fur_version}".toString()])
+
     into "$buildDir/src"
 }
 
