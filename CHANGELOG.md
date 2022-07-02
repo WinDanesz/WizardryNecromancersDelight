@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.3] - 2022-07-02
+### :bug: Bug Fixes
+- [`624d27a`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/624d27af5aa1f17dc4cd3d84cb4b42044016fab8) - Fixed startup issue introduced in v1.0.2 *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+
+
 ## [v1.0.2] - 2022-06-25
 ### :bug: Bug Fixes
 - [`db454a4`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/db454a44eeb5d4eba983d1a0944cf8146d4d64a1) - Fixed Frost Bomb not working on undeads (and applying poison type damage) (+1 squashed commits) *(commit by [@WinDanesz](https://github.com/WinDanesz))*
@@ -35,3 +40,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 [v1.0.1]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.0...v1.0.1
 [v1.0.2]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.1...v1.0.2
+[v1.0.3]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.2...v1.0.3
