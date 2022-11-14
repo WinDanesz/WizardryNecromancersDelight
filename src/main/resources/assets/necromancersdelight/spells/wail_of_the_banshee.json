@@ -12,7 +12,7 @@
     },
     "tier": "master",
     "element": "necromancy",
-    "type": "attack",
+    "type": "projectile",
     "cost": 50,
     "chargeup": 20,
     "cooldown": 120,
