@@ -1,9 +1,9 @@
-<h2>Version v1.0.3 - 7/2/2022</h2>
+<h2>Version v1.1.1 - 10/30/2022</h2>
 <p>&nbsp;</p>
 <h3>What's Changed</h3>
 <p><span style="font-size: 1.2rem;">&nbsp;</span></p>
-<h4><strong>Bug Fixes</strong></h4>
-<p>- Fixed startup issue introduced in v1.0.2</p>
+<h4><strong>Features</strong></h4>
+<p>- Some more helper methods</p>
 <p>&nbsp;</p>
 <p>As always, the easiest way to get help or feedback is through the Discord server! Find the link on the CurseForge page.</p>
 <p>&nbsp;</p>
