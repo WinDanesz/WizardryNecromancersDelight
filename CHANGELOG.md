@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.4] - 2022-11-16
+### :sparkles: New Features
+- [`84a33cd`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/84a33cd2f3357289dda52a5b52d62a47c20e7ed4) - Added Chinese translation (by LILPR1NC3) *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+
+### :bug: Bug Fixes
+- [`9071f8e`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/9071f8ef4e004f617b1498944b7c99c99e284d63) - Changed Wail of the Banshee spell type (attack->projectile) *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+
+
 ## [v1.0.3] - 2022-07-02
 ### :bug: Bug Fixes
 - [`624d27a`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/624d27af5aa1f17dc4cd3d84cb4b42044016fab8) - Fixed startup issue introduced in v1.0.2 *(commit by [@WinDanesz](https://github.com/WinDanesz))*
@@ -41,3 +49,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.0.1]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.0...v1.0.1
 [v1.0.2]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.1...v1.0.2
 [v1.0.3]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.2...v1.0.3
+[v1.0.4]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.3...v1.0.4
