@@ -1,12 +1,9 @@
-<h2>Version v1.0.4 - 11/16/2022</h2>
+<h2>Version v1.0.5 - 11/21/2022</h2>
 <p>&nbsp;</p>
 <h3>What's Changed</h3>
 <p><span style="font-size: 1.2rem;">&nbsp;</span></p>
-<h4><strong>Bug Fixes</strong></h4>
-<p>- Changed Wail of the Banshee spell type (attack->projectile)</p>
-
 <h4><strong>Features</strong></h4>
-<p>- Added Chinese translation (by LILPR1NC3)</p>
+<p>- Update to the latest WizardryUtils</p>
 <p>&nbsp;</p>
 <p>As always, the easiest way to get help or feedback is through the Discord server! Find the link on the CurseForge page.</p>
 <p>&nbsp;</p>

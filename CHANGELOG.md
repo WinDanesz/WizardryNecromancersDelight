@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.5] - 2022-11-21
+### :sparkles: New Features
+- [`4473e41`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/4473e41c72378d417f9d62a7dd94b0ab586f8668) - Update to the latest WizardryUtils *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+
+
 ## [v1.0.4] - 2022-11-16
 ### :sparkles: New Features
 - [`84a33cd`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/84a33cd2f3357289dda52a5b52d62a47c20e7ed4) - Added Chinese translation (by LILPR1NC3) *(commit by [@WinDanesz](https://github.com/WinDanesz))*
@@ -50,3 +55,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.0.2]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.1...v1.0.2
 [v1.0.3]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.2...v1.0.3
 [v1.0.4]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.3...v1.0.4
+[v1.0.5]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.4...v1.0.5
