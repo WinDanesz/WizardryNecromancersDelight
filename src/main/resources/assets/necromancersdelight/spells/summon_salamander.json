@@ -10,10 +10,10 @@
         "trades": true,
         "looting": true
     },
-    "tier": "master",
+    "tier": "advanced",
     "element": "fire",
     "type": "minion",
-    "cost": 80,
+    "cost": 70,
     "chargeup": 35,
     "cooldown": 200,
     "base_properties": {
