@@ -1,20 +1,31 @@
+import groovy.json.JsonOutput
 import org.apache.tools.ant.filters.ReplaceTokens
-import groovy.json.*
 
 buildscript {
     repositories {
-        maven { url = 'https://maven.minecraftforge.net' } // old url was 'https://files.minecraftforge.net/maven'
-        mavenCentral()
-        maven { url = "https://ajoberstar.org/bintray-backup/" }
+        gradlePluginPortal()
         maven {
-            name = 'FancyGradle'
-            url = 'https://gitlab.com/api/v4/projects/26758973/packages/maven'
+            name 'MinecraftForge'
+            url 'https://maven.neoforged.net/'
+        }
+        maven {
+            url 'https://gitlab.com/api/v4/projects/70917004/packages/maven'
+        }
+        //fallback for fancygradle maven
+        //mavenLocal()
+        maven {
+            name 'Sponge'
+            url 'https://repo.spongepowered.org/repository/maven-public/'
+        }
+        maven {
+            url 'https://maven.cleanroommc.com'
         }
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:5.+'
         classpath 'org.ajoberstar.grgit:grgit-gradle:3.1.1'
-        classpath group: 'wtf.gofancy.fancygradle', name: 'wtf.gofancy.fancygradle.gradle.plugin', version: '1.1.2-0'
+        classpath group: 'wtf.gofancy.fancygradle', name: 'wtf.gofancy.fancygradle.gradle.plugin', version: '1.1.+'
+        classpath 'org.spongepowered:mixingradle:0.7-SNAPSHOT'
     }
 
     repositories.each {
