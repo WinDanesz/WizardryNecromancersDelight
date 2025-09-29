@@ -11,10 +11,10 @@
         "looting": true
     },
     "tier": "advanced",
-    "element": "necromancy",
+    "element": "magic",
     "type": "minion",
     "cost": 50,
-    "chargeup": 0,
+    "chargeup": 30,
     "cooldown": 200,
     "base_properties": {
         "minion_lifetime": 400,

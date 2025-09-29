@@ -6,16 +6,19 @@ import com.windanesz.necromancersdelight.item.ItemLeechCrystalAmulet;
 import com.windanesz.necromancersdelight.registry.NDItems;
 import com.windanesz.wizardryutils.integration.baubles.BaublesIntegration;
 import electroblob.wizardry.constants.Element;
+import electroblob.wizardry.item.ISpellCastingItem;
 import electroblob.wizardry.item.ItemArtefact;
 import electroblob.wizardry.spell.SpellMinion;
 import electroblob.wizardry.util.EntityUtils;
 import electroblob.wizardry.util.SpellModifiers;
+import io.netty.handler.codec.AsciiHeadersEncoder;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 
 public class SummonElementalLeech extends SpellMinion<EntityElementalLeechMinion> {
@@ -28,8 +31,27 @@ public class SummonElementalLeech extends SpellMinion<EntityElementalLeechMinion
 	@Override
 	protected void addMinionExtras(EntityElementalLeechMinion minion, BlockPos pos, EntityLivingBase caster, SpellModifiers modifiers, int alreadySpawned) {
 		minion.setDropChance(EntityEquipmentSlot.MAINHAND, 0.0f);
-
 		Element element = Element.values()[minion.world.rand.nextInt(Element.values().length - 1) + 1];
+		if (caster != null ) {
+			if (caster.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof ISpellCastingItem) {
+				String name = caster.getHeldItem(EnumHand.MAIN_HAND).getItem().getRegistryName().toString();
+				if (name.contains("fire")) {
+					element = Element.FIRE;
+				} else if (name.contains("ice")) {
+					element = Element.ICE;
+				} else if (name.contains("necromancy")) {
+					element = Element.NECROMANCY;
+				} else if (name.contains("healing")) {
+					element = Element.HEALING;
+				} else if (name.contains("sorcery")) {
+					element = Element.SORCERY;
+				} else if (name.contains("earth")) {
+					element = Element.EARTH;
+				} else if (name.contains("lightning")) {
+					element = Element.LIGHTNING;
+				}
+			}
+		}
 		if (caster instanceof EntityPlayer && ItemArtefact.isArtefactActive((EntityPlayer) caster, NDItems.amulet_leech_crystal)) {
 			ItemStack stack = BaublesIntegration.getEquippedArtefactStacks((EntityPlayer) caster, ItemArtefact.Type.AMULET).get(0);
 			Element stackElement = ItemLeechCrystalAmulet.getElement(stack);
