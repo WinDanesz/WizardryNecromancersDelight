@@ -3,6 +3,7 @@ package com.windanesz.necromancersdelight.handler;
 import com.Fishmod.mod_LavaCow.entities.EntityBoneWorm;
 import com.Fishmod.mod_LavaCow.entities.EntityForsaken;
 import com.Fishmod.mod_LavaCow.entities.EntityMummy;
+import com.Fishmod.mod_LavaCow.entities.projectiles.EntityCactusThorn;
 import com.Fishmod.mod_LavaCow.entities.tameable.EntityUnburied;
 import com.Fishmod.mod_LavaCow.init.AddRecipes;
 import com.Fishmod.mod_LavaCow.init.Modblocks;
@@ -26,6 +27,7 @@ import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.monster.AbstractSkeleton;
 import net.minecraft.entity.passive.EntitySkeletonHorse;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Items;
 import net.minecraft.init.MobEffects;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -66,11 +68,15 @@ public class NDEventHandler {
 
 				if (artefact == NDItems.amulet_slowness_immunity) {
 
-					if (event.getPotionEffect().getPotion() == MobEffects.SLOWNESS) { event.setResult(Event.Result.DENY); }
+					if (event.getPotionEffect().getPotion() == MobEffects.SLOWNESS) {
+						event.setResult(Event.Result.DENY);
+					}
 
 				} else if (artefact == NDItems.amulet_weakness_immunity) {
 
-					if (event.getPotionEffect().getPotion() == MobEffects.WEAKNESS) { event.setResult(Event.Result.DENY); }
+					if (event.getPotionEffect().getPotion() == MobEffects.WEAKNESS) {
+						event.setResult(Event.Result.DENY);
+					}
 				}
 			}
 		}
@@ -131,7 +137,7 @@ public class NDEventHandler {
 			SpellModifiers modifiers = event.getModifiers();
 			modifiers.set(SpellModifiers.COST, modifiers.get(SpellModifiers.COST) * 2, false);
 
-			if( ((EntityManaLeechMinion) event.getCaster().getRidingEntity()).isWeakensSpells()) {
+			if (((EntityManaLeechMinion) event.getCaster().getRidingEntity()).isWeakensSpells()) {
 				modifiers.set(SpellModifiers.POTENCY, modifiers.get(SpellModifiers.POTENCY) * 0.6f, false);
 				modifiers.set(WizardryItems.blast_upgrade, modifiers.get(WizardryItems.blast_upgrade) * 0.6f, false);
 				modifiers.set(WizardryItems.range_upgrade, modifiers.get(WizardryItems.range_upgrade) * 0.6f, false);
@@ -214,7 +220,7 @@ public class NDEventHandler {
 					minionData.setCaster(player);
 					minionData.setLifetime(skeleton.getLifetime());
 
-					switch(world.rand.nextInt(4)) {
+					switch (world.rand.nextInt(4)) {
 						case 0:
 							forsaken.setItemStackToSlot(EntityEquipmentSlot.OFFHAND, getForsakenShield());
 							forsaken.getEntityAttribute(SharedMonsterAttributes.ARMOR).setBaseValue(4.0D);
@@ -296,7 +302,8 @@ public class NDEventHandler {
 							break;
 					}
 					if (gotHelmetCharm) {
-						minion.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET)); }
+						minion.setItemStackToSlot(EntityEquipmentSlot.HEAD, new ItemStack(Items.LEATHER_HELMET));
+					}
 				}
 				event.getWorld().spawnEntity(minion);
 				event.setCanceled(true);
@@ -307,8 +314,34 @@ public class NDEventHandler {
 	@SubscribeEvent
 	public static void onLivingDamageEvent(LivingDamageEvent event) {
 		if (event.getEntity() instanceof EntityPlayer && event.getSource().getTrueSource() != null) {
-			if (WizardryUtilsTools.isEntityConsideredUndead(event.getSource().getTrueSource()) && (ItemArtefact.isArtefactActive((EntityPlayer) event.getEntity(), NDItems.amulet_necromantic_ward))) {
+			EntityPlayer player = (EntityPlayer) event.getEntity();
+
+			// Necromantic ward damage reduction
+			if (WizardryUtilsTools.isEntityConsideredUndead(event.getSource().getTrueSource()) && (ItemArtefact.isArtefactActive(player, NDItems.amulet_necromantic_ward))) {
 				event.setAmount(event.getAmount() * 0.85f);
+			}
+
+			// Thornbelt functionality - shoot 16 thorns when taking damage
+			if (ItemArtefact.isArtefactActive(player, NDItems.belt_thorns)) {
+				// Check cooldown (15 seconds = 300 ticks)
+				if (!player.getCooldownTracker().hasCooldown(NDItems.belt_thorns)) {
+					World world = player.world;
+					if (!world.isRemote) {
+						// Shoot 16 thorns in all directions
+						for (int i = 0; i < 16; i++) {
+							EntityCactusThorn thorn = new EntityCactusThorn(world, player);
+							thorn.pickupStatus = EntityArrow.PickupStatus.DISALLOWED;
+							// Calculate direction for each thorn (360 degrees / 16 = 22.5 degrees per thorn)
+							double angle = (i * 22.5) * Math.PI / 180.0;
+							double x = Math.cos(angle) * 0.5;
+							double z = Math.sin(angle) * 0.5;
+							thorn.shoot(x, 0.0, z, 1.0f, 0.0f);
+							world.spawnEntity(thorn);
+						}
+						// Set cooldown for 15 seconds (300 ticks)
+						player.getCooldownTracker().setCooldown(NDItems.belt_thorns, 300);
+					}
+				}
 			}
 		}
 	}

@@ -3,11 +3,7 @@ package com.windanesz.necromancersdelight.registry;
 import com.windanesz.necromancersdelight.NecromancersDelight;
 import com.windanesz.necromancersdelight.entity.projectile.EntityFrostBomb;
 import com.windanesz.necromancersdelight.entity.projectile.EntityStinkBomb;
-import com.windanesz.necromancersdelight.item.ItemFrostBomb;
-import com.windanesz.necromancersdelight.item.ItemLeechCrystalAmulet;
-import com.windanesz.necromancersdelight.item.ItemMaliceWard;
-import com.windanesz.necromancersdelight.item.ItemPestCrown;
-import com.windanesz.necromancersdelight.item.ItemStinkBomb;
+import com.windanesz.necromancersdelight.item.*;
 import com.windanesz.wizardryutils.item.ItemNewArtefact;
 import com.windanesz.wizardryutils.registry.ItemRegistry;
 import electroblob.wizardry.item.ItemArtefact;
@@ -53,6 +49,8 @@ public final class NDItems {
 	public static final Item charm_mushroom_minion = placeholder();
 	public static final Item head_pest_crown = placeholder();
 
+	public static final Item belt_thorns = placeholder();
+
 	//	public static final Item head_ = placeholder();
 
 	public static final Item stink_bomb = placeholder();
@@ -81,6 +79,7 @@ public final class NDItems {
 		ItemRegistry.registerItemArtefact(registry, "charm_scarab", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.EPIC, ItemArtefact.Type.CHARM));
 		ItemRegistry.registerItemArtefact(registry, "charm_mushroom_minion", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.EPIC, ItemArtefact.Type.CHARM));
 
+		ItemRegistry.registerItemArtefact(registry, "belt_thorns", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.BELT));
 
 		ItemRegistry.registerItemArtefact(registry, "head_pest_crown", NecromancersDelight.MODID, new ItemPestCrown(EnumRarity.EPIC, ItemNewArtefact.Type.HEAD));
 
