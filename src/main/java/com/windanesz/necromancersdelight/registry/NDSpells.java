@@ -12,6 +12,7 @@ import com.windanesz.necromancersdelight.entity.living.EntityVespaMinion;
 import com.windanesz.necromancersdelight.entity.projectile.EntityFrostBomb;
 import com.windanesz.necromancersdelight.entity.projectile.EntityStinkBomb;
 import com.windanesz.necromancersdelight.handler.NDEventHandler;
+import com.windanesz.necromancersdelight.spell.Carcinize;
 import com.windanesz.necromancersdelight.spell.Corrode;
 import com.windanesz.necromancersdelight.spell.GlowShroom;
 import com.windanesz.necromancersdelight.spell.SummonElementalLeech;
@@ -63,6 +64,7 @@ public final class NDSpells {
     public static final Spell frost_bomb = placeholder();
     public static final Spell summon_mana_leech = placeholder();
     public static final Spell summon_elemental_leech = placeholder();
+    public static final Spell carcinize = placeholder();
 
 	private NDSpells() {} // no instances
 
@@ -112,5 +114,6 @@ public final class NDSpells {
 		registry.register(new SpellProjectile<>(NecromancersDelight.MODID, "frost_bomb", EntityFrostBomb::new).addProperties(Spell.DIRECT_DAMAGE, Spell.EFFECT_RADIUS, Spell.DIRECT_EFFECT_DURATION, Spell.DIRECT_EFFECT_STRENGTH, Spell.SPLASH_DAMAGE, Spell.SPLASH_EFFECT_DURATION, Spell.SPLASH_EFFECT_STRENGTH).soundValues(0.5f, 0.4f, 0.2f));
         registry.register(new SummonManaLeech());
         registry.register(new SummonElementalLeech());
+        registry.register(new Carcinize(NecromancersDelight.MODID, "carcinize"));
 	}
 }
