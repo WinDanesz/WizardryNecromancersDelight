@@ -64,8 +64,8 @@ public final class NDItems {
 		IForgeRegistry<Item> registry = event.getRegistry();
 
 		ItemRegistry.registerItemArtefact(registry, "amulet_necromantic_ward", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.UNCOMMON, ItemArtefact.Type.AMULET));
-		ItemRegistry.registerItemArtefact(registry, "amulet_slowness_immunity", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.AMULET));
-		ItemRegistry.registerItemArtefact(registry, "amulet_weakness_immunity", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.AMULET));
+		ItemRegistry.registerItemArtefact(registry, "amulet_slowness_immunity", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.EPIC, ItemArtefact.Type.AMULET));
+		ItemRegistry.registerItemArtefact(registry, "amulet_weakness_immunity", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.EPIC, ItemArtefact.Type.AMULET));
 		ItemRegistry.registerItemArtefact(registry, "amulet_malice_ward", NecromancersDelight.MODID, new ItemMaliceWard(EnumRarity.RARE, ItemArtefact.Type.AMULET));
 		ItemRegistry.registerItemArtefact(registry, "amulet_leechlink", NecromancersDelight.MODID, new ItemArtefact(EnumRarity.RARE, ItemArtefact.Type.AMULET));
 
