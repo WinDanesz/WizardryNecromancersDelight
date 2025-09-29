@@ -57,7 +57,7 @@ public final class NDSpells {
 	public static final Spell glowshroom = placeholder();
 	public static final Spell corrode = placeholder();
 	public static final Spell trial_of_mushrooms = placeholder();
-	public static final Spell forsaken_shield = placeholder();
+	public static final Spell bound_vespa_shield = placeholder();
     public static final Spell bound_spectral_dagger = placeholder();
     public static final Spell stink_bomb = placeholder();
     public static final Spell frost_bomb = placeholder();
@@ -107,10 +107,7 @@ public final class NDSpells {
 		registry.register(new Corrode(NecromancersDelight.MODID, "corrode", SpellActions.POINT, false));
 		registry.register(new TrialOfMushrooms(NecromancersDelight.MODID, "trial_of_mushrooms", SpellActions.IMBUE, false));
 		registry.register(new SpellDynamicConjuration(NecromancersDelight.MODID, "bound_spectral_dagger", FishItems.SPECTRAL_DAGGER));
-		registry.register(new SpellDynamicConjuration(NecromancersDelight.MODID, "forsaken_shield", FishItems.BONESWORD) {
-			@Override
-			protected ItemStack addItemExtras(EntityPlayer caster, ItemStack shield, SpellModifiers modifiers) { return NDEventHandler.getForsakenShield(); }
-		});
+		registry.register(new SpellDynamicConjuration(NecromancersDelight.MODID, "bound_vespa_shield", FishItems.VESPA_SHIELD));
 		registry.register(new SpellProjectile<>(NecromancersDelight.MODID, "stink_bomb", EntityStinkBomb::new).addProperties(Spell.DIRECT_DAMAGE, Spell.EFFECT_RADIUS, Spell.DIRECT_EFFECT_DURATION, Spell.DIRECT_EFFECT_STRENGTH, Spell.SPLASH_DAMAGE, Spell.SPLASH_EFFECT_DURATION, Spell.SPLASH_EFFECT_STRENGTH).soundValues(0.5f, 0.4f, 0.2f));
 		registry.register(new SpellProjectile<>(NecromancersDelight.MODID, "frost_bomb", EntityFrostBomb::new).addProperties(Spell.DIRECT_DAMAGE, Spell.EFFECT_RADIUS, Spell.DIRECT_EFFECT_DURATION, Spell.DIRECT_EFFECT_STRENGTH, Spell.SPLASH_DAMAGE, Spell.SPLASH_EFFECT_DURATION, Spell.SPLASH_EFFECT_STRENGTH).soundValues(0.5f, 0.4f, 0.2f));
         registry.register(new SummonManaLeech());
