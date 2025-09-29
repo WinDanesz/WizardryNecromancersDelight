@@ -87,7 +87,7 @@ public final class NDItems {
 
 		ItemRegistry.registerItem(registry, "stink_bomb", NecromancersDelight.MODID, new ItemStinkBomb());
 		ItemRegistry.registerItem(registry, "frost_bomb", NecromancersDelight.MODID, new ItemFrostBomb());
-		ItemRegistry.registerItem(registry, "amulet_leech_crystal", NecromancersDelight.MODID, new ItemLeechCrystalAmulet(EnumRarity.RARE, ItemArtefact.Type.AMULET));
+		ItemRegistry.registerItem(registry, "amulet_leech_crystal", NecromancersDelight.MODID, new ItemLeechCrystalAmulet(EnumRarity.UNCOMMON, ItemArtefact.Type.AMULET));
 	}
 
 	/** Called from init() in the main mod class to register wizardry's dispenser behaviours. */
