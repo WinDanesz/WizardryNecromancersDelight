@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0] - 2025-09-29
+### :sparkles: New Features
+- [`cfa648e`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/cfa648efa759dcf93e88a105a4dc4de85c80102a) - Summon Salamander master->advanced tier *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`d4f2b9a`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/d4f2b9abbf5858da0194ecb3fd4ba1f10bd0b35a) - Update Fish's Undeads Rising version 1.3.1 -> 1.5.2 *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`cd08b76`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/cd08b7618e9e842d832dc2848d1b2249d342860c) - Update WizardryUtils version 1.1.3 -> 1.2.3 *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`15acc34`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/15acc340dc73012c7841652e30b9fb1d3adfb455) - Update Wizardry version 4.3.6 -> 4.3.15 *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`7afeb36`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/7afeb361cc1e62297e683a1c0094c5d74215e9f0) - Add Bound Vespa Shield spell *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`62b756c`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/62b756c58c9c090b5c04fb78338fc5f6094679d5) - Changed element of Summon Elemental Leech to MAGIC. Leech element depends on held spellcasting item's element *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`4b244cf`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/4b244cf0381440030636be9456a218877ee58e08) - Lowered tier of Leech Crystal Amulet to Uncommon *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`b15cdf2`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/b15cdf25123a6b6cac2d419873a07654e4e6515f) - Added Thornbelt *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`9432076`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/9432076142fcb43a9fd35d498a6c2b7606ba8553) - Added Carcinize spell *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+- [`f45b79c`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/f45b79ca6a76c969aefc4bb15603d8e576c02399) - Changed tier of Amulet of Vigour and Amulet of Tenacity to Epic *(commit by [@WinDanesz](https://github.com/WinDanesz))*
+
+
 ## [v1.0.5] - 2022-11-21
 ### :sparkles: New Features
 - [`4473e41`](https://github.com/WinDanesz/WizardryNecromancersDelight/commit/4473e41c72378d417f9d62a7dd94b0ab586f8668) - Update to the latest WizardryUtils *(commit by [@WinDanesz](https://github.com/WinDanesz))*
@@ -56,3 +70,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [v1.0.3]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.2...v1.0.3
 [v1.0.4]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.3...v1.0.4
 [v1.0.5]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.4...v1.0.5
+[v1.1.0]: https://github.com/WinDanesz/WizardryNecromancersDelight/compare/v1.0.5...v1.1.0
